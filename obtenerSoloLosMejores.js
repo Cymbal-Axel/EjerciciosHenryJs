@@ -11,5 +11,11 @@ function obtenerSoloLosMejores(estudiantes, nota1, nota2) {
     // obtenerSoloLosMejores(estudiantes, 15, 15); retorna => ["Fulanito Rodriguez", "Perengano Leiria"];
     //
     // Tu código:
-    
+    var notaMejor = [];
+    estudiantes.forEach(estudiante => {
+        if (estudiante.check1 >= nota1 && estudiante.check2 >= nota2) {
+            notaMejor.push(`${estudiante.nombre} ${estudiante.apellido}`)
+        }
+    })
+    return notaMejor;
 };

@@ -8,5 +8,12 @@ function sumarElTipo(arreglo) {
     // Tip: podes usar el ciclo for o el metodo de Array 'reduce'
   
     // Tu código aca:
-   
+    let resultado = {};
+  
+    arreglo.forEach(vehiculo => {
+      if (resultado[vehiculo]) {resultado[vehiculo]++}
+      else {resultado[vehiculo] = 1}
+    })
+    
+    return resultado;
   }

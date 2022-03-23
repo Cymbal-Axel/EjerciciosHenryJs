@@ -6,7 +6,20 @@ function crearClaseAlumno() {
             // Inicializar las propiedades del alumno con los valores recibidos como argumento.
             //
             // Tu código:
-            
+            this.nombre = nombre,
+                this.apellido = apellido,
+                this.cohorte = cohorte,
+                this.grupoDeAmigos = grupoDeAmigos,
+                this.notasCheckpoints = notasCheckpoints
+            this.detalle = function () {
+                return {
+                    nombre: this.nombre,
+                    apellido: this.apellido,
+                    cohorte: this.cohorte,
+                    grupoDeAmigos: this.grupoDeAmigos,
+                    notasCheckpoints: this.notasCheckpoints
+                }
+            }
         };
 
         addAmigos(nombre, apellido) {
@@ -17,14 +30,23 @@ function crearClaseAlumno() {
             // No debe retornar nada.
             //
             // Tu código:
-            
+            var newObj = {
+                nombre: nombre,
+                apellido: apellido,
+                cohorte: this.cohorte
+            };
+            this.grupoDeAmigos.push(newObj);
         };
 
         obtenerAmigos() {
             // Este método debe devolver la cantidad de amigos que tiene el alumno.
             //
             // Tu código:
-            
+            var cantidad = 0;
+            for (let i = 0; i < this.grupoDeAmigos.length; i++){
+                cantidad++
+            }
+            return cantidad;
         };
 
         addNota(nota) {
@@ -32,12 +54,14 @@ function crearClaseAlumno() {
             // No debe retornar nada.
             //
             // Tu código:
+            this.notasCheckpoints.push(nota);
         };
 
         obtenerNotas() {
             // Este método debe devolver un array con las notas del alumno.
             //
             // Tu código:
+            return this.notasCheckpoints;
         };
 
         presentacion() {
@@ -47,6 +71,7 @@ function crearClaseAlumno() {
             // "Hola, soy el alumno Lionel Messi del cohorte 13";
             //
             // Tu código:
+            return `Hola, soy el alumno ${this.nombre} ${this.apellido} del cohorte ${this.cohorte}`
         };
 
     };

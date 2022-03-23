@@ -21,7 +21,12 @@ function estaOffline(usuarios, nombre) {
     // estaOffline(usuarios, 'emi') retorna false
   
     // Tu código aca:
-  
+    for (let i = 0; i < usuarios.length; i++){
+      var usuarioActual = usuarios[i];
+      if(usuarioActual.nombre == nombre){
+        return !usuarioActual.online;
+      }
+    }
     
     
   }

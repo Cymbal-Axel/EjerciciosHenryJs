@@ -11,5 +11,12 @@ function mapear() {
     // }) devuelve [2, 3, 4, 5]
   
     // Tu código aca:
-    
+    Array.prototype.mapear = function (callback) {
+      let arrayADevolver = []
+      for(let i = 0; i < this.length; i++){
+        item = this[i];
+          arrayADevolver.push(callback(item))
+      }
+      return arrayADevolver;
+    } 
   }

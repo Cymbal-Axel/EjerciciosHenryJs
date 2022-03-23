@@ -7,5 +7,14 @@ function invertirLetras(frase) {
     //  'i' === 'i'.toLowerCase(); -> es lower;
     //  'I' === 'I'.toLowerCase()l -> no es lower;
     // Tu código:
-   
+    const palabra = frase.split('');
+    let resultado = '';
+    palabra.forEach(letra => {
+        if (letra == letra.toLowerCase()) {
+            resultado += letra.toUpperCase()
+        } else {
+            resultado += letra.toLowerCase()
+        }
+    });
+    return resultado;
 }

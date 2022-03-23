@@ -5,7 +5,18 @@ function crearClaseEmprendedor() {
             // Inicializar las propiedades del emprendedor con los valores recibidos como argumento
   
             // Tu código aca:
-            
+            this.nombre = nombre,
+            this.apellido = apellido,
+            this.libros = libros,
+            this.mascotas = mascotas
+            this.detalle = function () {
+                return {
+                nombre: this.nombre,
+                apellido: this.apellido,
+                libros: this.libros,
+                mascotas: this.mascotas    
+                }
+            }
         }
   
         addMascota(mascota) {
@@ -13,6 +24,7 @@ function crearClaseEmprendedor() {
           // no debe retornar nada.
   
           // Tu código aca:
+          this.maschotas.push(mascota);
          
         }
   
@@ -23,7 +35,7 @@ function crearClaseEmprendedor() {
             // emprendedor.getMascotas() debería devolver 2
   
             // Tu código aca:
-          
+            return this.mascotas.length;
   
         }
   
@@ -32,7 +44,11 @@ function crearClaseEmprendedor() {
             // { nombre: book, autor: autor} al arreglo de libros del emprendedor.
             // No debe retornar nada.
            // Tu código aca:
-            
+            var newObje = {
+                nombre: book,
+                autor: autor
+            }
+            this.libros.push(newObje);
   
         }
   
@@ -43,9 +59,12 @@ function crearClaseEmprendedor() {
             // emprendedor.getBooks() debería devolver ['El señor de las moscas', 'Fundacion']
   
             // Tu código aca:
-              
-              /*this.libros.objetoLibro.push(nuevoA);
-              return nuevoA;*/
+            var newArray = [];
+            this.libros.forEach(libro => {
+                newArray.push(libro.nombre);
+            });
+            return newArray;
+            
              
               
         }
@@ -57,7 +76,7 @@ function crearClaseEmprendedor() {
             // emprendedor.getFullName() deberia devolver 'Elon Musk'
   
             // Tu código aca:
-            
+            return `${this.nombre} ${this.apellido}`;
   
         } 
     }

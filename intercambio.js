@@ -4,5 +4,9 @@ function intercambio(objeto) {
     // NOTA: No utilizar métodos de Object (values, keys, entries);
     //
     // Tu código:
-    
+    var objetoInvertido = {};
+    for(var key in objeto){
+        objetoInvertido[objeto[key]] = key;
+    }
+    return objetoInvertido;
   }
