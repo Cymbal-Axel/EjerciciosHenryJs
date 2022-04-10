@@ -30,4 +30,4 @@ function menorMayor(numeros) {
     return resultado;
   
   }
-  console.log(menorMayor([2, 5, 1, 8, 12]));
+  console.log(menorMayor([2, 5, 1, 8]));
